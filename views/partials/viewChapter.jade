@@ -1,0 +1,11 @@
+<h3 ng-bind-html-unsafe="chapter.name"></h3>
+<div ng-bind-html-unsafe="chapter.description"></div>
+p There are {{chapter.questions.length}} questions in this chapter. Read the instructions carefully and answer as best you can. Good luck!
+div(ng-repeat='question in chapter.questions' ng-controller="ViewQuestionCtrl")
+  h3 {{question.questionid}}
+  <div ng-bind-html-unsafe="question.prose"></div>
+  <div ng-bind-html-unsafe="question.question"></div>
+  textarea(ng-model='form.answer', cols='50', rows='5')
+  p
+    button(ng-click='submitAnswer()') Submit
+  div {{results}}

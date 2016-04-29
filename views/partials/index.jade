@@ -1,0 +1,9 @@
+p There are {{chapters.length}} chapters
+div(ng-repeat='chapter in chapters')
+  h3 {{chapter.title}} {{chapters.length}}
+  div {{chapter.description}}
+  a(href='readPost/{{chapter.id}}') More
+  |  -
+  a(href='editPost/{{chapter.id}}') Edit
+  |  -
+  a(href='deletePost/{{chapter.id}}') Delete
